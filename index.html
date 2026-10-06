@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nova Sky</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="icon" href="./src/images/logo.png" type="image/png">
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: "Poppins", system-ui, -apple-system, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="bg-[#00183C]">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="h-[72px] flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="#" class="flex items-center shrink-0">
+                    <img src="./src/images/logo.png" alt="Nova Sky" class="w-auto h-10 object-contain" />
+                </a>
+
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+
+                    <a href="#"
+                        class="text-[#39A1FD] text-[14px] leading-5 font-medium hover:text-white transition-colors duration-200">
+                        Home
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium hover:text-[#39A1FD] transition-colors duration-200">
+                        Plans
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium hover:text-[#39A1FD] transition-colors duration-200">
+                        Business
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium hover:text-[#39A1FD] transition-colors duration-200">
+                        Coverage
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium hover:text-[#39A1FD] transition-colors duration-200">
+                        Help
+                    </a>
+
+                </div>
+
+
+                <!-- Desktop My Account -->
+                <div class="hidden md:block">
+
+                    <a href="#" class="inline-flex items-center justify-center
+                   bg-[#39A1FD]
+                   text-white
+                   text-[14px]
+                   leading-5
+                   font-medium
+                   px-5
+                   py-2.5
+                   rounded-md
+                   hover:bg-[#238eea]
+                   transition-colors duration-200">
+                        My Account
+                    </a>
+
+                </div>
+
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" type="button" aria-label="Open menu"
+                    class="md:hidden text-[#3FD0FC] hover:text-white">
+
+                    <!-- Menu Icon -->
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="currentColor" class="w-7 h-7">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+
+                </button>
+
+            </div>
+
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden pb-5">
+
+                <div class="flex flex-col gap-1">
+
+                    <a href="#"
+                        class="text-[#39A1FD] text-[14px] leading-5 font-medium px-3 py-3 rounded-md hover:bg-white/5 hover:text-white transition">
+                        Home
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium px-3 py-3 rounded-md hover:bg-white/5 hover:text-[#39A1FD] transition">
+                        Plans
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium px-3 py-3 rounded-md hover:bg-white/5 hover:text-[#39A1FD] transition">
+                        Business
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium px-3 py-3 rounded-md hover:bg-white/5 hover:text-[#39A1FD] transition">
+                        Coverage
+                    </a>
+
+                    <a href="#"
+                        class="text-white text-[14px] leading-5 font-medium px-3 py-3 rounded-md hover:bg-white/5 hover:text-[#39A1FD] transition">
+                        Help
+                    </a>
+
+
+                    <!-- Mobile My Account -->
+                    <a href="#" class="mt-3 inline-flex items-center justify-center
+                   bg-[#39A1FD]
+                   text-white
+                   text-[14px]
+                   leading-5
+                   font-medium
+                   px-5
+                   py-2.5
+                   rounded-md
+                   hover:bg-[#238eea]
+                   transition-colors duration-200">
+                        My Account
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-[calc(100vh-72px)] w-full bg-cover bg-center bg-no-repeat sm:bg-center"
+        style="background-image: url('./src/images/hero.png');">
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 min-h-[calc(100vh-72px)] flex items-center">
+
+            <div class="w-full py-20 sm:py-24 lg:py-28">
+
+                <!-- Heading -->
+                <h1
+                    class="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-tight tracking-tight">
+                    Connect
+                    <span class="text-[#3FD0FC]">higher.</span>
+                </h1>
+
+                <!-- Paragraph -->
+                <p class="mt-6 max-w-md sm:max-w-lg text-white text-lg sm:text-xl leading-8 sm:leading-9 font-normal">
+                    The next-generation mobile network designed for you, in Switzerland and beyond.
+                </p>
+
+                <!-- Buttons -->
+                <div class="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+
+                    <!-- Explore Plans -->
+                    <a href="#" class="inline-flex items-center justify-center
+                           bg-[#39A1FD]
+                           text-white
+                           text-base sm:text-[16px]
+                           font-medium
+                           px-7 py-3.5
+                           rounded-md
+                           border border-[#39A1FD]
+                           hover:bg-[#238EEA]
+                           hover:border-[#238EEA]
+                           transition-all duration-200">
+                        Explore Our Plans
+                    </a>
+
+                    <!-- Activate eSIM -->
+                    <a href="#" class="inline-flex items-center justify-center
+                           bg-transparent
+                           text-white
+                           text-base sm:text-[16px]
+                           font-medium
+                           px-7 py-3.5
+                           rounded-md
+                           border border-white
+                           hover:bg-white/10
+                           hover:text-white
+                           transition-all duration-200">
+                        Activate an eSIM
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+
+    <!-- Plans Section -->
+    <section class="w-full bg-[#00183C] py-20 sm:py-24">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <!-- Plans Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 items-stretch">
+
+
+                <!-- ==================== NovaSky One ==================== -->
+                <div class="relative bg-[#0D2548] rounded-2xl p-6 sm:p-7 lg:p-8 flex flex-col">
+
+                    <!-- Heading -->
+                    <h2 class="text-white text-3xl sm:text-4xl font-semibold">
+                        NovaSky
+                        <span class="text-[#3FD0FC]">One</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="mt-4 text-[#9BA8B9] text-sm sm:text-base leading-6 min-h-[48px]">
+                        Everything you need for everyday use
+                    </p>
+
+                    <!-- Price -->
+                    <div class="mt-7 text-white flex items-end gap-2">
+                        <span class="text-4xl sm:text-5xl font-semibold">
+                            CHF 24.90
+                        </span>
+
+                        <span class="text-[#9BA8B9] text-sm mb-1">
+                            / month
+                        </span>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="mt-7 space-y-4">
+
+                        <!-- 5G -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-signal text-[#39A1FD] w-5 text-center"></i>
+                            <span>25 GB in 5G Switzerland</span>
+                        </div>
+
+                        <!-- Calls -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-phone text-[#39A1FD] w-5 text-center"></i>
+                            <span>Unlimited Calls within Switzerland</span>
+                        </div>
+
+                        <!-- SMS -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-regular fa-comment-dots text-[#39A1FD] w-5 text-center"></i>
+                            <span>Unlimited SMS within Switzerland</span>
+                        </div>
+
+                        <!-- Hotspot -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-wifi text-[#39A1FD] w-5 text-center"></i>
+                            <span>Hotspot included</span>
+                        </div>
+
+                        <!-- Commitment -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-regular fa-circle-check text-[#39A1FD] w-5 text-center"></i>
+                            <span>No commitment</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Spacer -->
+                    <div class="flex-1"></div>
+
+                    <!-- Button -->
+                    <a href="#" class="mt-8 w-full flex items-center justify-center
+                           bg-[#39A1FD]
+                           hover:bg-[#238EEA]
+                           text-white
+                           font-medium
+                           text-sm
+                           py-3.5
+                           rounded-md
+                           transition-colors duration-200">
+                        Choose One
+                    </a>
+
+                    <!-- More Details -->
+                    <a href="#" class="mt-5 flex items-center justify-center gap-2
+                           text-white
+                           text-sm
+                           hover:text-[#39A1FD]
+                           transition-colors duration-200">
+                        <span>More details</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- ==================== NovaSky Plus ==================== -->
+                <div class="relative bg-[#0D2548] rounded-2xl p-6 sm:p-7 lg:p-8
+                       flex flex-col border border-[#39A1FD]">
+
+                    <!-- Popular Badge -->
+                    <div class="absolute left-1/2 -translate-x-1/2 -top-4 z-20">
+                        <span class="inline-flex items-center justify-center
+                               bg-[#39A1FD]
+                               text-white
+                               text-xs
+                               font-semibold
+                               px-6
+                               py-2
+                               rounded-full
+                               whitespace-nowrap
+                               shadow-lg">
+                            POPULAR
+                        </span>
+                    </div>
+
+
+                    <!-- Heading -->
+                    <h2 class="text-white text-3xl sm:text-4xl font-semibold">
+                        NovaSky
+                        <span class="text-[#3FD0FC]">Plus</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="mt-4 text-[#9BA8B9] text-sm sm:text-base leading-6 min-h-[48px]">
+                        The perfect balance for your everyday life
+                    </p>
+
+                    <!-- Price -->
+                    <div class="mt-7 text-white flex items-end gap-2">
+                        <span class="text-4xl sm:text-5xl font-semibold">
+                            CHF 39.90
+                        </span>
+
+                        <span class="text-[#9BA8B9] text-sm mb-1">
+                            / month
+                        </span>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="mt-7 space-y-4">
+
+                        <!-- 5G Switzerland & EU -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-signal text-[#39A1FD] w-5 text-center"></i>
+                            <span>80 GB in 5G Switzerland & EU</span>
+                        </div>
+
+                        <!-- Calls -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-phone text-[#39A1FD] w-5 text-center"></i>
+                            <span>Unlimited Calls within Switzerland</span>
+                        </div>
+
+                        <!-- SMS -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-regular fa-comment-dots text-[#39A1FD] w-5 text-center"></i>
+                            <span>Unlimited SMS within Switzerland & EU</span>
+                        </div>
+
+                        <!-- Hotspot -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-wifi text-[#39A1FD] w-5 text-center"></i>
+                            <span>Hotspot included</span>
+                        </div>
+
+                        <!-- Roaming -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-earth-americas text-[#39A1FD] w-5 text-center"></i>
+                            <span>Roaming in EU included</span>
+                        </div>
+
+                        <!-- No Commitment -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-regular fa-circle-check text-[#39A1FD] w-5 text-center"></i>
+                            <span>No commitment</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Spacer -->
+                    <div class="flex-1"></div>
+
+                    <!-- Button -->
+                    <a href="#" class="mt-8 w-full flex items-center justify-center
+                           bg-[#39A1FD]
+                           hover:bg-[#238EEA]
+                           text-white
+                           font-medium
+                           text-sm
+                           py-3.5
+                           rounded-md
+                           transition-colors duration-200">
+                        Choose Plus
+                    </a>
+
+                    <!-- More Details -->
+                    <a href="#" class="mt-5 flex items-center justify-center gap-2
+                           text-white
+                           text-sm
+                           hover:text-[#39A1FD]
+                           transition-colors duration-200">
+                        <span>More details</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+
+                </div>
+
+
+                <!-- ==================== NovaSky Max ==================== -->
+                <div class="relative bg-[#0D2548] rounded-2xl p-6 sm:p-7 lg:p-8 flex flex-col">
+
+                    <!-- Heading -->
+                    <h2 class="text-white text-3xl sm:text-4xl font-semibold">
+                        NovaSky
+                        <span class="text-[#3FD0FC]">Max</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="mt-4 text-[#9BA8B9] text-sm sm:text-base leading-6 min-h-[48px]">
+                        For those who want the maximum
+                    </p>
+
+                    <!-- Price -->
+                    <div class="mt-7 text-white flex items-end gap-2">
+                        <span class="text-4xl sm:text-5xl font-semibold">
+                            CHF 59.90
+                        </span>
+
+                        <span class="text-[#9BA8B9] text-sm mb-1">
+                            / month
+                        </span>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="mt-7 space-y-4">
+
+                        <!-- 5G -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-signal text-[#39A1FD] w-5 text-center"></i>
+                            <span>150 GB in 5G Switzerland</span>
+                        </div>
+
+                        <!-- Calls -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-phone text-[#39A1FD] w-5 text-center"></i>
+                            <span>Unlimited Calls within Switzerland</span>
+                        </div>
+
+                        <!-- SMS -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-regular fa-comment-dots text-[#39A1FD] w-5 text-center"></i>
+                            <span>Unlimited SMS within Switzerland & EU</span>
+                        </div>
+
+                        <!-- Worldwide Roaming -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-earth-americas text-[#39A1FD] w-5 text-center"></i>
+                            <span>Roaming worldwide included</span>
+                        </div>
+
+                        <!-- Priority Network -->
+                        <div class="flex items-center gap-4 text-white text-sm">
+                            <i class="fa-solid fa-bolt text-[#39A1FD] w-5 text-center"></i>
+                            <span>Priority Network</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Spacer -->
+                    <div class="flex-1"></div>
+
+                    <!-- Button -->
+                    <a href="#" class="mt-8 w-full flex items-center justify-center
+                           bg-[#39A1FD]
+                           hover:bg-[#238EEA]
+                           text-white
+                           font-medium
+                           text-sm
+                           py-3.5
+                           rounded-md
+                           transition-colors duration-200">
+                        Choose Max
+                    </a>
+
+                    <!-- More Details -->
+                    <a href="#" class="mt-5 flex items-center justify-center gap-2
+                           text-white
+                           text-sm
+                           hover:text-[#39A1FD]
+                           transition-colors duration-200">
+                        <span>More details</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <!-- ==================== Features & Services Section ==================== -->
+<section class="w-full bg-[#00183C] py-20 sm:py-24">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+        <!-- ==================== Row 1: Features ==================== -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Ultra-Fast 5G Network -->
+            <div class="text-left">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#0D2548] rounded-xl">
+                    <i class="fa-solid fa-gauge-high text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-5 text-white text-lg font-semibold">
+                    Ultra-Fast 5G Network
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    Enjoy a fast and reliable connection wherever you are.
+                </p>
+            </div>
+
+            <!-- Nationwide Coverage -->
+            <div class="text-left">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#0D2548] rounded-xl">
+                    <i class="fa-solid fa-user-shield text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-5 text-white text-lg font-semibold">
+                    Nationwide Coverage
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    Reliable, high-performance coverage across Switzerland.
+                </p>
+            </div>
+
+            <!-- Unlimited Calls & SMS -->
+            <div class="text-left">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#0D2548] rounded-xl">
+                    <i class="fa-solid fa-phone text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-5 text-white text-lg font-semibold">
+                    Unlimited Calls & SMS
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    Stay connected with your family and friends without limits.
+                </p>
+            </div>
+
+            <!-- No Contract -->
+            <div class="text-left">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#0D2548] rounded-xl">
+                    <i class="fa-solid fa-infinity text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-5 text-white text-lg font-semibold">
+                    No Contract
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    No long-term commitment. Cancel whenever you want.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ==================== Row 2: Service Cards ==================== -->
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- eSIM -->
+            <div class="bg-[#0D2548] rounded-2xl p-6 sm:p-7 flex flex-col">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#00183C] rounded-xl">
+                    <i class="fa-solid fa-mobile-screen text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-6 text-white text-xl font-semibold">
+                    eSIM
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    Activate your plan instantly, no physical SIM needed.
+                </p>
+                <!-- Button -->
+                <a href="#" class="mt-7 inline-flex items-center gap-2 bg-[#39A1FD] hover:bg-[#2b8de3] text-white text-sm font-medium px-4 py-2.5 rounded-xl transition-colors duration-200 w-fit">
+                    <span>Activate eSIM</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Coverage -->
+            <div class="bg-[#0D2548] rounded-2xl p-6 sm:p-7 flex flex-col">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#00183C] rounded-xl">
+                    <i class="fa-solid fa-tower-cell text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-6 text-white text-xl font-semibold">
+                    Coverage
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    See where NovaSky keeps you connected across Switzerland.
+                </p>
+                <!-- Button -->
+                <a href="#" class="mt-7 inline-flex items-center gap-2 bg-[#39A1FD] hover:bg-[#2b8de3] text-white text-sm font-medium px-4 py-2.5 rounded-xl transition-colors duration-200 w-fit">
+                    <span>Check Coverage</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Business -->
+            <div class="bg-[#0D2548] rounded-2xl p-6 sm:p-7 flex flex-col">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#00183C] rounded-xl">
+                    <i class="fa-solid fa-building text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-6 text-white text-xl font-semibold">
+                    Business
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    Flexible mobile solutions built for teams and companies.
+                </p>
+                <!-- Button -->
+                <a href="#" class="mt-7 inline-flex items-center gap-2 bg-[#39A1FD] hover:bg-[#2b8de3] text-white text-sm font-medium px-4 py-2.5 rounded-xl transition-colors duration-200 w-fit">
+                    <span>Learn More</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Support -->
+            <div class="bg-[#0D2548] rounded-2xl p-6 sm:p-7 flex flex-col">
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center bg-[#00183C] rounded-xl">
+                    <i class="fa-solid fa-headset text-[#39A1FD] text-xl"></i>
+                </div>
+                <!-- Content -->
+                <h3 class="mt-6 text-white text-xl font-semibold">
+                    Support
+                </h3>
+                <p class="mt-3 text-[#9BA8B9] text-sm leading-6">
+                    Our team is here to help you every day of the week.
+                </p>
+                <!-- Button -->
+                <a href="#" class="mt-7 inline-flex items-center gap-2 bg-[#39A1FD] hover:bg-[#2b8de3] text-white text-sm font-medium px-4 py-2.5 rounded-xl transition-colors duration-200 w-fit">
+                    <span>Get Support</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==================== Footer ==================== -->
+    <footer class="w-full bg-[#021735]">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20">
+
+            <!-- Footer Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+
+                <!-- ==================== Column 1 ==================== -->
+                <div class="sm:col-span-2 lg:col-span-1">
+
+                    <!-- Logo -->
+                    <a href="#" class="inline-flex items-center">
+                        <img src="./src/images/logo.png" alt="NovaSky" class="h-10 w-auto object-contain" />
+                    </a>
+
+                    <!-- Description -->
+                    <p class="mt-5 max-w-sm text-[#9BA8B9] text-sm leading-6">
+                        NovaSky is a modern and innovative mobile network that keeps
+                        you connected to what matters most, throughout Switzerland
+                        and beyond.
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="mt-6 flex items-center gap-5">
+
+                        <!-- Facebook -->
+                        <a href="#" aria-label="Facebook"
+                            class="text-white hover:text-[#39A1FD] transition-colors duration-200">
+                            <i class="fa-brands fa-facebook-f text-lg"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#" aria-label="Instagram"
+                            class="text-white hover:text-[#39A1FD] transition-colors duration-200">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="#" aria-label="LinkedIn"
+                            class="text-white hover:text-[#39A1FD] transition-colors duration-200">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="#" aria-label="TikTok"
+                            class="text-white hover:text-[#39A1FD] transition-colors duration-200">
+                            <i class="fa-brands fa-tiktok text-lg"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================== Column 2 ==================== -->
+                <div>
+
+                    <h3 class="text-white text-base font-semibold">
+                        Navigation
+                    </h3>
+
+                    <ul class="mt-5 space-y-3">
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Plans
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                eSIM
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Coverage
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Business
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Help & Support
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ==================== Column 3 ==================== -->
+                <div>
+
+                    <h3 class="text-white text-base font-semibold">
+                        Information
+                    </h3>
+
+                    <ul class="mt-5 space-y-3">
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Careers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Press
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Partners
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Terms & Conditions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Privacy Policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                                Legal Notice
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ==================== Column 4 ==================== -->
+                <div>
+
+                    <h3 class="text-white text-base font-semibold">
+                        Contact
+                    </h3>
+
+                    <div class="mt-5 space-y-3">
+
+                        <!-- Phone -->
+                        <a href="tel:0800800100"
+                            class="flex items-center gap-3 text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                            <i class="fa-solid fa-phone text-[#39A1FD] w-4 text-center"></i>
+                            <span>0800 800 100</span>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:support@novasky.ch"
+                            class="flex items-center gap-3 text-[#9BA8B9] text-sm hover:text-white transition-colors duration-200">
+                            <i class="fa-regular fa-envelope text-[#39A1FD] w-4 text-center"></i>
+                            <span>support@novasky.ch</span>
+                        </a>
+
+                        <!-- Opening Hours -->
+                        <div class="flex items-start gap-3 text-[#9BA8B9] text-sm leading-6">
+                            <i class="fa-regular fa-clock text-[#39A1FD] w-4 text-center mt-1"></i>
+
+                            <span>
+                                Mon – Sun:<br />
+                                8:00 AM – 8:00 PM
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================== Column 5 ==================== -->
+                <div>
+
+                    <h3 class="text-white text-base font-semibold">
+                        Download the App
+                    </h3>
+
+                    <div class="mt-5 space-y-3">
+
+                        <!-- App Store -->
+                        <a href="#" class="flex items-center gap-3
+                               w-full max-w-[190px]
+                               bg-black
+                               border border-white/20
+                               rounded-lg
+                               px-4 py-2.5
+                               hover:border-white/40
+                               transition-colors duration-200">
+
+                            <i class="fa-brands fa-apple text-white text-2xl"></i>
+
+                            <div class="flex flex-col leading-none">
+                                <span class="text-white text-[10px]">
+                                    Download on the
+                                </span>
+
+                                <span class="text-white text-base font-medium mt-1">
+                                    App Store
+                                </span>
+                            </div>
+
+                        </a>
+
+
+                        <!-- Google Play -->
+                        <a href="#" class="flex items-center gap-3
+                               w-full max-w-[190px]
+                               bg-black
+                               border border-white/20
+                               rounded-lg
+                               px-4 py-2.5
+                               hover:border-white/40
+                               transition-colors duration-200">
+
+                            <i class="fa-brands fa-google-play text-white text-xl"></i>
+
+                            <div class="flex flex-col leading-none">
+                                <span class="text-white text-[10px]">
+                                    GET IT ON
+                                </span>
+
+                                <span class="text-white text-base font-medium mt-1">
+                                    Google Play
+                                </span>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== Footer Bottom ==================== -->
+            <div class="mt-14 pt-6 border-t border-white/10
+                   flex flex-col sm:flex-row
+                   items-center justify-between
+                   gap-4">
+
+                <!-- Copyright -->
+                <p class="text-[#9BA8B9] text-xs sm:text-sm text-center sm:text-left">
+                    © 2026 NovaSky. All Rights Reserved.
+                </p>
+
+                <!-- Language -->
+                <button type="button" class="flex items-center gap-2
+                       text-[#9BA8B9]
+                       text-sm
+                       hover:text-white
+                       transition-colors duration-200">
+                    <span>English</span>
+                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
